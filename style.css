@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #C9DABF, #9CA986, #808D7C);
+    color: #333; /* Darker text color for better readability */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #C9DABF, #9CA986, #808D7C);
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Ensure header content can be properly positioned */
+}
+
+.container {
+    padding: 10px 10%;
+    max-width: 1200px; /* Limit container width for better layout */
+    margin: 0 auto; /* Center container horizontally */
+}
+
+.container {
+    padding: 10px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 60px; /* Space for fixed navigation */
+}
+
+.row{
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+.col{
+    flex-basis: 80%;
+}
+
+
+nav {
+    position: fixed; /* Fix navigation at the top */
+    width: 100%;    
+    top: 0;
+    left: 0;
+    background: #fff; /* Background color for readability */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    padding: 10px 0; /* Adjust padding as needed */
+}
+
+nav ul {
+    display: flex; /* Align navigation items horizontally */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px; /* Spacing between items */
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: blanchedalmond;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.6s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+.header-text {
+    margin-top: 30%; /* Adjust as needed for vertical spacing */
+    font-size: 20px;
+    display: flex;
+    flex-direction: column; /* Stack text elements vertically */
+    text-align: center;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    color: #fff; /* White text for better contrast */
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin: 20px 0 0 0; /* Margin to space from top and ensure consistency */
+    font-weight: bold; /* Emphasize the main heading */
+}
+
+/* Additional CSS for auto-typing effect */
+#auto-typing-text {
+    font-size: 20px; /* Adjust font size as needed */
+    color: #fff; /* White text color for better contrast */
+    overflow: hidden; /* Ensures the text hides while typing */
+    white-space: nowrap; /* Prevents text from wrapping */
+    border-right: .15em solid #fff; /* Cursor effect */
+    animation: typing 3.5s steps(30, end), blink .75s step-end infinite; /* Animation */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
+}
+
+.header-text p {
+    font-size: 20px; /* Ensure font size is consistent with the container */
+    margin: 0; /* Remove default margins */
+    line-height: 1.6; /* Improve readability */
+}
+
+.header-text span {
+    color: rgb(15, 72, 122); /* Maintain color for emphasis */
+}
+
+/*---------about---------*/
+
+#about {
+    padding: 80px 0;
+    background-color: #f9f9f9; /* Light background for the about section */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+    padding-left: 20px; /* Add spacing between image and text */
+}
+
+.about-col-1 img {
+    width: 100%; /* Adjust as needed */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+.about-col-2 p {
+    font-size: 18px; /* Slightly smaller font size for better readability */
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.8; /* Improve readability with line-height */
+    color: #333; /* Darker text color for better readability */
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: rgb(15, 72, 122);
+    margin-bottom: 20px; /* Add spacing below subtitle */
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tablinks {
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    color: #555; /* Subtle text color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.tablinks:hover {
+    color: rgb(15, 72, 122); /* Change color on hover */
+}
+
+.tablinks::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(15, 72, 122);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: width 0.6s;
+}
+
+.tablinks.active-link::after {
+    width: 100%; /* Active link underline width */
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+    font-size: 20px; /* Adjust font size for better readability */
+}
+
+.tab-contents ul li span {
+    color: #5F6F65;
+    font-size: 14px;
+    font-style: italic; /* Italicize the span text */
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+/* Socials section styles */
+#socials {
+    padding: 40px 0;
+    background-color: #f4f4f4; /* Light background color */
+    text-align: center; /* Center align social icons */
+}
+
+.container {
+    max-width: 1200px; /* Limit container width */
+    margin: 0 auto; /* Center container */
+    padding: 0 20px; /* Add padding for responsiveness */
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    gap: 20px; /* Space between icons */
+}
+
+.social-icon {
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; /* Circle shape */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Specific social icon backgrounds */
+.social-icon.facebook {
+    background-image: url('images/facebooklogo.png'); /* Facebook icon */
+}
+
+.social-icon.github {
+    background-image: url('images/github.png'); /* Github icon */
+}
+
+/* Hover effects */
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}

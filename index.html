@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="" alt="" class="logo">
+                <ul id = "sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#socials">Socials</a></li>
+                </ul>
+                
+            </nav>
+
+            <div class="header-text">
+                <div id="auto-typing-text">Front-End Developer</div>
+                <h1>Hi! <br> I’m <span>Mark</span> <br></h1>
+            </div>
+     <!----   <div class="row">
+                <div class="col">
+                    <h1>
+                        Projects
+                    </h1>
+                    <p></p>
+                </div> --------> 
+                
+
+            </div>
+            
+        </div>
+        
+    </div>
+
+   <!-- ----------About---------- -->
+   <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/about.png" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>An IT graduate who thrived in the field of web development.
+                    With a strong passion for acquiring new knowledge and skills,
+                    I have a clear goal of becoming a full-stack developer.
+                    I aim to transition into game development in the future and remain deeply curious and enthusiastic about learning and expanding my skill set.
+                </p>
+                <div class="tab-titles">
+                    <p class="tablinks active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tablinks" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills"> <!-- Fixed id from skils to skills -->
+                    <ul>
+                        <li><span>UI</span><br>Designing Web interfaces <br></li>
+                        <li><span>Proficient In Microsoft Office</span> <br>Word, Excel and Powerpoint <br></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2024</span><br>Bachelors of Science in Information Technology <br></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="socials">
+    <div class="container">
+        <div class="row">
+            <a href="https://www.facebook.com/Claaaaaaaaaaaaaay" class="social-icon facebook" target="_blank" title="Facebook"></a>
+            <a href="https://github.com/clay2RES" class="social-icon github" target="_blank" title="Github"></a>
+            <!-- Add more social icons as needed -->
+        </div>
+    </div>
+</div>
+
+
+    <script>
+     var tablinks = document.getElementsByClassName("tablinks");
+     var tabcontents = document.getElementsByClassName("tab-contents");
+
+     function opentab(tabname) {
+         for (let tablink of tablinks) {
+             tablink.classList.remove("active-link");
+         }
+         for (let tabcontent of tabcontents) {
+             tabcontent.classList.remove("active-tab");
+         }
+
+         // Add 'active-link' class to the clicked tab link
+         document.querySelector(`.tablinks[onclick="opentab('${tabname}')"]`).classList.add("active-link");
+
+         // Add 'active-tab' class to the tab content
+         document.getElementById(tabname).classList.add("active-tab");
+     }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
